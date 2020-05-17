@@ -26,8 +26,8 @@ public class ProtectView {
                 "序号\t条形码\t商品名称\t单价\t供应商\t\n" +
                 "===\t\t=====\t=======\t=\t===\t\t\n");
         for (int i = 0; i < productList.size(); i++) {
-            System.out.println(flag + "\t" + productList.get(i).getBarCode() +
-                    productList.get(i).getProductName() + productList.get(i).getPrice() +
+            System.out.println(flag + "\t" + productList.get(i).getBarCode() +"\t" +
+                    productList.get(i).getProductName() +"\t" + productList.get(i).getPrice() +"\t" +
                     productList.get(i).getSupply());
             flag++;
         }
