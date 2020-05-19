@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
 public class ProtectGoodService {
     static Connection con;
 
-    public static boolean inputFromExcel() throws Exception {      //从excel导入
+    public  boolean inputFromExcel() throws Exception {      //从excel导入
         con = new DatabaseConnection().getConnection();
         List<Product> productList = new ArrayList<>();
         IProductDAO dao = DAOFactory.getProductDAOInstance(con);
@@ -53,7 +53,7 @@ public class ProtectGoodService {
         return true;
     }
 
-    public static boolean inputFromTxt() throws Exception {    //从文本文件导入
+    public  boolean inputFromTxt() throws Exception {    //从文本文件导入
         con = new DatabaseConnection().getConnection();
         List<Product> productList = new ArrayList<>();
         IProductDAO dao = DAOFactory.getProductDAOInstance(con);
@@ -74,7 +74,7 @@ public class ProtectGoodService {
         System.out.println("成功导入" + (productList.size() - index) + "条数据");
         return true;
     }
-  public static boolean inputFromKeyBoard() throws Exception{    //从键盘导入
+  public boolean inputFromKeyBoard() throws Exception{    //从键盘导入
       con = new DatabaseConnection().getConnection();
       List<Product> productList = new ArrayList<>();
       IProductDAO dao = DAOFactory.getProductDAOInstance(con);
@@ -98,7 +98,7 @@ public class ProtectGoodService {
       return true;
   }
 
-    public static boolean searchByProductName() throws Exception{   //根据产品名查询
+    public boolean searchByProductName() throws Exception{   //根据产品名查询
         List<Product> productList = null;
         con = new DatabaseConnection().getConnection();
         String productName = ProtectView.inputProductName();
