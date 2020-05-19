@@ -23,7 +23,7 @@ import java.util.List;
 
 public class OutFileService {   //文件输出类
     static Connection con;
- public static boolean outputToExcel() throws Exception{   //输出至Excel
+ public boolean outputToExcel() throws Exception{   //输出至Excel
      List<SaleDetail> saleDetailList = new ArrayList<>();
      con = new DatabaseConnection().getConnection();
      ISaleDetailDAO dao = DAOFactory.getSaleDetailDAOInstance(con);
@@ -57,11 +57,12 @@ public class OutFileService {   //文件输出类
          sheet.addCell(label);
      }
      System.out.println("成功导出" + i + "条销售数据到Excel文件中");
+     wwb.write();
      wwb.close();
      return true;
  }
 
-    public static boolean outputToTxt() throws Exception {   //输出至TXT
+    public boolean outputToTxt() throws Exception {   //输出至TXT
         List<SaleDetail> saleDetailList = new ArrayList<>();
         con = new DatabaseConnection().getConnection();
         ISaleDetailDAO dao = DAOFactory.getSaleDetailDAOInstance(con);
