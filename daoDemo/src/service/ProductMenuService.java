@@ -9,20 +9,21 @@ public class ProductMenuService {
     ProtectGoodService protectGoodService;
     public static boolean chooseConfig() throws Exception{   //产品相关的菜单
         int choose = protectMenuView.showProtectMenu();
+        ProtectGoodService pgs = new ProtectGoodService();
         if (!UserService.user1.getRole().equals("管理员")){
             choose=5;
         }
         while(choose!=5){
             switch (choose){
                 case 1:
-                    ProtectGoodService.inputFromExcel();break;
+                    pgs.inputFromExcel();break;
                 case 2:
-                    ProtectGoodService.inputFromTxt();
+                    pgs.inputFromTxt();
                     break;
                 case 3:
-                    ProtectGoodService.inputFromKeyBoard();
+                    pgs.inputFromKeyBoard();
                     break;
-                case 4:ProtectGoodService.searchByProductName();
+                case 4:pgs.searchByProductName();
                     break;
 
                 default:
